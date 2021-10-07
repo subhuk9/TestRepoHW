@@ -22,6 +22,4 @@ jobs:
         file: printhellowworld/ci/tasks/install-and-test.yml
         input_mapping:
           code: printhellowworld
-        output_mapping:
-          code: printhellowworld
         

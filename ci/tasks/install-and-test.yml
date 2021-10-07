@@ -4,10 +4,10 @@ image_resource:
   source:
     repository: node
     tag:
-      "12.16.1"
+      latest
 inputs: 
-  - name: code
+  - name: printhellowworld
 outputs: 
-  - name: code
+  - name: printhellowworld
 run:
-  path: code/ci/scripts/install-and-test.sh
+  path: printhellowworld/ci/scripts/install-and-test.sh
