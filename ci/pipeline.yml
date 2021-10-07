@@ -32,7 +32,7 @@ jobs:
         file: printhellowworld/ci/tasks/install-and-test.yml
         input_mapping:
           code: printhellowworld
-        output-mapping:
+        output_mapping:
           code: printhellowworld
 
   - name: build-and-test-pr
