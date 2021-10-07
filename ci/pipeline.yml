@@ -1,0 +1,27 @@
+resource_types:
+  - name: pull-request
+    type: registry-image
+    source:
+      repository: teliaoss/github-pr-resource
+
+resources:
+
+  - name: PrintHellowWorld
+    type: git
+    icon: github-circle
+    source: 
+      uri: https://github.com/subhuk9/TestRepoHW
+      branch: concourse-test
+
+jobs:
+  - name: build-and-test
+    plan:
+      - get: PrintHellowWorld
+        trigger: true
+      - task: build-image
+        file: PrintHellowWorld/ci/tasks/install-and-test.yml
+        input_mapping:
+          code: PrintHellowWorld
+        output_mapping:
+          code: PrintHellowWorld
+        
