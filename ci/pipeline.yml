@@ -1,17 +1,27 @@
+# resource_types:
+#   - name: pull-request
+#     type: registry-image
+#     source:
+#       repository: teliaoss/github-pr-resource
+
 resource_types:
-  - name: pull-request
-    type: registry-image
-    source:
-      repository: teliaoss/github-pr-resource
+- name: pull-request
+  type: docker-image
+  source:
+    repository: teliaoss/github-pr-resource
 
 resources:
-
   - name: printhellowworld
     type: git
     icon: github-circle
     source: 
       uri: https://github.com/subhuk9/TestRepoHW
       branch: concourse-test
+
+  - name: printhellowworld-pr
+    type: pull-request
+    source:
+    repository: subhuk9/TestRepoHW
 
 jobs:
   - name: build-and-test
@@ -22,4 +32,17 @@ jobs:
         file: printhellowworld/ci/tasks/install-and-test.yml
         input_mapping:
           code: printhellowworld
+        output-mapping:
+          code: printhellowworld
+
+  - name: build-and-test-pr
+    plan:
+      - get: printhellowworld-pr
+        trigger: true
+      - task: build-image
+        file: printhellowworld-pr/ci/tasks/install-and-test.yml
+        input_mapping:
+          code: printhellowworld-pr
+        output_mapping:
+          code: printhellowworld-pr
         
