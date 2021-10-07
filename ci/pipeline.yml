@@ -6,7 +6,7 @@ resource_types:
 
 resources:
 
-  - name: PrintHellowWorld
+  - name: printhellowworld
     type: git
     icon: github-circle
     source: 
@@ -16,12 +16,12 @@ resources:
 jobs:
   - name: build-and-test
     plan:
-      - get: PrintHellowWorld
+      - get: printhellowworld
         trigger: true
       - task: build-image
-        file: PrintHellowWorld/ci/tasks/install-and-test.yml
+        file: printhellowworld/ci/tasks/install-and-test.yml
         input_mapping:
-          code: PrintHellowWorld
+          code: printhellowworld
         output_mapping:
-          code: PrintHellowWorld
+          code: printhellowworld
         
