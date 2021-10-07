@@ -21,7 +21,7 @@ resources:
   - name: printhellowworld-pr
     type: pull-request
     source:
-    repository: subhuk9/TestRepoHW
+      repository: subhuk9/TestRepoHW
 
 jobs:
   - name: build-and-test
