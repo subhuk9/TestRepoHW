@@ -4,7 +4,7 @@ image_resource:
   source:
     repository: node
     tag:
-      latest
+      "12.0.0"
 inputs: 
   - name: code
 outputs: 
