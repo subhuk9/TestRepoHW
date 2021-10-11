@@ -8,7 +8,7 @@
 # echo "Node Version: $(node --version)"
 # echo "NPM Version: $(npm --version)"
 
-cd printhellowworld
+cd code
 
 npm install
 npm run start

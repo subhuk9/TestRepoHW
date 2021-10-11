@@ -6,8 +6,8 @@ image_resource:
     tag:
       latest
 inputs: 
-  - name: printhellowworld
+  - name: code
 outputs: 
-  - name: printhellowworld
+  - name: code
 run:
-  path: printhellowworld/ci/scripts/install-and-test.sh
+  path: code/ci/scripts/install-and-test.sh
