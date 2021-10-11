@@ -15,7 +15,7 @@ resources:
     type: git
     source: 
       uri: https://github.com/subhuk9/TestRepoHW
-      branch: concourse-test-new
+      branch: master
 
   - name: printhellowworld-pr
     type: pull-request
