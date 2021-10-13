@@ -1,9 +1,3 @@
-# resource_types:
-#   - name: pull-request
-#     type: registry-image
-#     source:
-#       repository: teliaoss/github-pr-resource
-
 resource_types:
 - name: pull-request
   type: registry-image
@@ -15,7 +9,7 @@ resources:
     type: git
     source: 
       uri: https://github.com/subhuk9/TestRepoHW
-      branch: concourse-test-new
+      branch: concourse-test
 
   - name: printhellowworld-pr
     type: pull-request
