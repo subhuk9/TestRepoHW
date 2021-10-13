@@ -13,15 +13,12 @@ resource_types:
 resources:
   - name: printhellowworld
     type: git
-    icon: github-circle
-    check_every: 1h
     source: 
       uri: https://github.com/subhuk9/TestRepoHW
-      branch: concourse-test
+      branch: concourse-test-new
 
   - name: printhellowworld-pr
     type: pull-request
-    check_every: 1h
     source:
       repository: subhuk9/TestRepoHW
 
